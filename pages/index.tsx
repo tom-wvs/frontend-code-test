@@ -47,6 +47,8 @@ const IndexPage: FC = () => (
     </pre>
 
     <h3 id="rest-apis">REST APIs</h3>
+
+    <p>You can get the form fields needed for each bank through the endpoints below.</p>
     <ul>
       <li>
         <code>
@@ -67,6 +69,11 @@ const IndexPage: FC = () => (
           </a>
         </code>
       </li>
+    </ul>
+
+    <p>There's also an endpoint where you can submit the form to, which will render a decision, accepted or declined.</p>
+    <ul>
+      <li><code>POST /api/lender/INSERT_BANK</code></li>
     </ul>
 
     <h2 id="ux-and-design">UX and Design</h2>
