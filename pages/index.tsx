@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { bankOfAzerothData } from './api/lenders/bank-of-azeroth';
 
 const IndexPage: FC = () => (
   <div
