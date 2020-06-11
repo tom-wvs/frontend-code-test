@@ -29,28 +29,35 @@ I want to know if I was accepted or declined
 
 ### REST APIs
 
-```jsonc
+```json
 // GET /api/lenders/:lender-name
 {
   "name": "Bank of Azeroth",
   "fields": [
-    "firstName",
-    "lastName",
+    "first_name",
+    "last_name",
     "gender",
     "email",
-    "phoneNumber",
-    "monthlyIncome"
+    "phone_number",
+    "monthly_income"
   ]
 }
 
 // POST /api/lenders/:lender-name
+
+// Request
 {
-  "firstName": "Ann",
-  "lastName": "Heselden",
+  "first_name": "Ann",
+  "last_name": "Heselden",
   "gender": "female",
   "email": "ann.heselden@divido.com",
-  "phoneNumber": "+447473468883",
-  "monthlyIncome": 50000
+  "phone_number": "+447473468883",
+  "monthly_income": 50000
+}
+
+// Response
+{
+  "decision": "accepted",
 }
 ```
 
