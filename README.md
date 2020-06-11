@@ -1,12 +1,10 @@
 # Frontend Code Test
 
-Hey :wave:, thanks for taking the time to do our technical test :smiley:!
+Hey :wave:, thanks for taking the time to do our technical test!
 
 ## Task
 
-Your goal is to build a product called Application Form. This product will dynamically generate a form based on data received from an API using React and GraphQL.
-
-> Use GraphQL as a middleware between the frontend and the REST APIs.
+Your goal is to build a product called Application Form. This product will dynamically generate a form based on data received from an API using React and GraphQL. Use GraphQL as a proxy between the frontend and the REST APIs.
 
 There are three banks requesting an Application Form:
 
@@ -29,9 +27,9 @@ When I submit the form
 I want to know if I was accepted or declined
 ```
 
-### [REST APIs](/pages/api)
+### REST APIs
 
-```json
+```jsonc
 // GET /api/lenders/:lender-name
 {
   "name": "Bank of Azeroth",
