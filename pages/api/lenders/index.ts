@@ -17,6 +17,10 @@ export interface LenderResponse {
   >;
 }
 
+export interface LenderDecisionResponse {
+  decision: 'accepted' | 'declined';
+}
+
 const handler = (_: NextApiRequest, res: NextApiResponse<LenderResponse[]>) => {
   res.status(200).json([nabooBankData, middleEarthBankData, bankOfAzerothData]);
 };
