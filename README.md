@@ -1,21 +1,35 @@
-# Frontend
+# Frontend Code Test
 
 Hey :wave:, thanks for taking the time to do our technical test :smiley:!
 
-Your goal is to build a product that dynamically generates a form based on data received from an API using React and GraphQL.
+## Task
 
-## Background
+Your goal is to build a product called Application Form. This product will dynamically generate a form based on data received from an API using React and GraphQL.
 
-- You've been tasked to build a new product called Application Form.
-- This product allows allows banks to dynamically build a form that users use to apply for a loan.
-- There are three banks requesting an Application Form:
-  - Bank of Azeroth
-  - Naboo Bank
-  - Middle Earth Bank
+> Use GraphQL as a middleware between the frontend and the REST APIs.
 
-## API
+There are three banks requesting an Application Form:
 
-The backend has already been setup for you, see `/pages/api/lenders`.
+- Bank of Azeroth
+- Naboo Bank
+- Middle Earth Bank
+
+### Requirements
+
+```
+As a user
+When I go to /:lender-name
+I want to see the form for the lender
+So that I can apply for a bank loan
+```
+
+```
+As a user
+When I submit the form
+I want to know if I was accepted or declined
+```
+
+### [REST APIs](/pages/api)
 
 ```json
 // GET /api/lenders/:lender-name
@@ -41,26 +55,6 @@ The backend has already been setup for you, see `/pages/api/lenders`.
   "monthlyIncome": 50000
 }
 ```
-
-## Requirements
-
-```
-As a user
-When I go to /:lender-name
-I want to see the form for the lender
-So that I can apply for a bank loan
-```
-
-```
-As a user
-When I submit the form
-I want to know if I was accepted or declined
-```
-
-## Implementation
-
-- Use React for the frontend.
-- Use GraphQL as a middleware between the frontend and backend endpoints.
 
 ## UX and Design
 
