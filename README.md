@@ -74,3 +74,14 @@ Feel free to add tests if you want, or present what tests you would add if you h
 ```bash
 yarn && yarn dev
 ```
+
+or open with [CodeSandbox](https://githubbox.com/dividohq/frontend-code-test/tree/docs/simplify-readme).
+
+## Follow up Questions
+
+- How would you setup frontend validation?
+- What if a lender has different frontend validation than the other
+  lenders - how would you solve that?
+- What if a lender would like `monthly_income` to be a select element
+  instead of input?
+- How would you write tests for this product?

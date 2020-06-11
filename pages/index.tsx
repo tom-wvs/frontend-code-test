@@ -47,43 +47,29 @@ const IndexPage: FC = () => (
     </pre>
 
     <h3 id="rest-apis">REST APIs</h3>
-    <pre>
-      <code>
-        {`
-// GET /api/lenders/:lender-name
-{
-  "name": "Bank of Azeroth",
-  "fields": [
-    "first_name",
-    "last_name",
-    "gender",
-    "email",
-    "phone_number",
-    "monthly_income"
-  ]
-}
+    <ul>
+      <li>
+        <code>
+          <a href="/api/lenders/bank-of-azeroth">
+            GET /api/lenders/bank-of-azeroth
+          </a>
+        </code>
+      </li>
+      <li>
+        <code>
+          <a href="/api/lenders/naboo-bank">GET /api/lenders/naboo-bank</a>
+        </code>
+      </li>
+      <li>
+        <code>
+          <a href="/api/lenders/middle-earth-bank">
+            GET /api/lenders/middle-earth-bank
+          </a>
+        </code>
+      </li>
+    </ul>
 
-// POST /api/lenders/:lender-name
-
-// Request
-{
-  "first_name": "Ann",
-  "last_name": "Heselden",
-  "gender": "female",
-  "email": "ann.heselden@divido.com",
-  "phone_number": "+447473468883",
-  "monthly_income": 50000
-}
-
-// Response
-{
-  "decision": "accepted",
-}
-        `}
-      </code>
-    </pre>
-
-    <h2 id="uxanddesign">UX and Design</h2>
+    <h2 id="ux-and-design">UX and Design</h2>
     <p>
       It’s entirely up to you how you would like to design the Application Form!
       Feel free to use 3rd party tools like <code>emotion</code> or{' '}
@@ -100,6 +86,26 @@ const IndexPage: FC = () => (
     <pre>
       <code>yarn &amp;&amp; yarn dev</code>
     </pre>
+    <p>
+      or open with{' '}
+      <a href="https://githubbox.com/dividohq/frontend-code-test/tree/docs/simplify-readme">
+        CodeSandbox
+      </a>
+    </p>
+
+    <h2 id="follow-up-questions">Follow up questions</h2>
+    <ol>
+      <li>How would you setup frontend validation?</li>
+      <li>
+        What if a lender has different frontend validation than the other
+        lenders - how would you solve that?
+      </li>
+      <li>
+        What if a lender would like <code>monthly_income</code> to be a select
+        element instead of input?
+      </li>
+      <li>How would you write tests for this product?</li>
+    </ol>
   </div>
 );
 
