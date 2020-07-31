@@ -17,9 +17,8 @@ const IndexPage: FC = () => (
     <h2 id="task">Task</h2>
     <p>
       Your goal is to build a product called Application Form. This product will
-      dynamically generate a form based on data received from an API using React
-      and GraphQL. Use GraphQL as a proxy between the frontend and the REST
-      APIs.
+      dynamically generate a form based on data received from an API using
+      React.
     </p>
     <p>There are three banks requesting an Application Form:</p>
     <ul>
@@ -48,7 +47,10 @@ const IndexPage: FC = () => (
 
     <h3 id="rest-apis">REST APIs</h3>
 
-    <p>You can get the form fields needed for each bank through the endpoints below.</p>
+    <p>
+      You can get the form fields needed for each bank through the endpoints
+      below.
+    </p>
     <ul>
       <li>
         <code>
@@ -71,9 +73,14 @@ const IndexPage: FC = () => (
       </li>
     </ul>
 
-    <p>There's also an endpoint where you can submit the form to, which will render a decision, accepted or declined.</p>
+    <p>
+      There's also an endpoint where you can submit the form to, which will
+      render a decision, accepted or declined.
+    </p>
     <ul>
-      <li><code>POST /api/lender/INSERT_BANK</code></li>
+      <li>
+        <code>POST /api/lender/INSERT_BANK</code>
+      </li>
     </ul>
 
     <h2 id="ux-and-design">UX and Design</h2>
