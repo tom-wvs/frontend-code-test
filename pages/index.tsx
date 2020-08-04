@@ -13,6 +13,10 @@ const IndexPage: FC = () => (
       Checkout the project on{' '}
       <a href="https://github.com/dividohq/frontend-code-test">Github</a>.
     </p>
+    <h2 id="getting-started">Running the project</h2>
+    <pre>
+      <code>yarn &amp;&amp; yarn dev</code>
+    </pre>
 
     <h2 id="task">Task</h2>
     <p>
@@ -87,7 +91,7 @@ const IndexPage: FC = () => (
     <p>
       It’s entirely up to you how you would like to design the Application Form!
       Feel free to use 3rd party tools like <code>emotion</code> or{' '}
-      <code>material-ui</code>.
+      <code>material-ui</code> (already added as a dependency).
     </p>
 
     <h2 id="testing">Testing</h2>
@@ -95,31 +99,6 @@ const IndexPage: FC = () => (
       Feel free to add tests if you want, or present what tests you would add if
       you had more time.
     </p>
-
-    <h2 id="getting-started">Running the project</h2>
-    <pre>
-      <code>yarn &amp;&amp; yarn dev</code>
-    </pre>
-    <p>
-      or open with{' '}
-      <a href="https://githubbox.com/dividohq/frontend-code-test/tree/docs/simplify-readme">
-        CodeSandbox
-      </a>
-    </p>
-
-    <h2 id="follow-up-questions">Follow up questions</h2>
-    <ol>
-      <li>How would you setup frontend validation?</li>
-      <li>
-        What if a lender has different frontend validation than the other
-        lenders - how would you solve that?
-      </li>
-      <li>
-        What if a lender would like <code>monthly_income</code> to be a select
-        element instead of input?
-      </li>
-      <li>How would you write tests for this product?</li>
-    </ol>
   </div>
 );
 
