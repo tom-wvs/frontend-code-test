@@ -97,7 +97,7 @@ const IndexPage: FC = () => (
     <h2 id="testing">Testing</h2>
     <p>
       Feel free to add tests if you want, or present what tests you would add if
-      you had more time.
+      you had more time. Try running <code>yarn test:cypress</code>
     </p>
   </div>
 );

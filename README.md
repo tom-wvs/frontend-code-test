@@ -88,5 +88,10 @@ It’s entirely up to you how you would like to design the Application Form! Fee
 
 ## Testing
 
-Feel free to add tests if you want, or present what tests you would add if you had more time.
+```bash
+yarn test:cypress
+```
+will run our Cypress tests.
+
+Feel free to add some more end-to-end cypress tests, or present what tests you would add if you had more time.
 
