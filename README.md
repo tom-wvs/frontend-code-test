@@ -22,7 +22,7 @@ There are three banks requesting an Application Form:
 ## Installation
 
 ```bash
-yarn dev
+yarn install
 ```
 to install the website's npm dependencies
 
