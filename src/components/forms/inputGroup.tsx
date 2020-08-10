@@ -37,7 +37,7 @@ const StyledMandatoryIcon = styled(MandatoryIcon)`
 `;
 
 const MemoLabel = memo((props: MemoLabelProps) => (
-  <VerticalLabel htmlFor={props.id}>
+  <VerticalLabel htmlFor={props.id} aria-required={props.required}>
     {props.label}
     {props.required && <StyledMandatoryIcon />}
   </VerticalLabel>

@@ -1,27 +1,27 @@
 import React, { memo } from 'react';
 import styled from 'styled-components';
-import { darken } from 'polished';
 import { Spinner } from '../spinner';
 
 const StyledButton = styled.button`
   align-items: center;
-  background-color: ${(props) =>
-    props.backgroundColor || props.theme.colours.primary};
+  background: linear-gradient(190deg, #32a2e6, #0e7ad4);
   border-radius: 5px;
   border: 0;
   color: ${(props) => props.color || props.theme.colours.white};
   cursor: pointer;
   display: inline-flex;
   flex-direction: row;
-  font-size: 1.2rem;
+  font-size: 1rem;
   justify-content: center;
   padding: 10px 20px;
-  transition: background-color 250ms ease;
+  transition: all 250ms ease;
   width: 100%;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.117647),
+    0 1px 4px rgba(0, 0, 0, 0.117647);
 
   :hover {
-    background-color: ${(props) =>
-      darken(0.1, props.backgroundColor || props.theme.colours.primary)};
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.117647),
+      0 3px 6px rgba(0, 0, 0, 0.117647);
   }
 
   :disabled {

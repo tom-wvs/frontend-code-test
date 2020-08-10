@@ -7,8 +7,9 @@ import {
   useLenderFieldsApi,
   LenderFieldsApiStatus,
 } from 'src/hooks/useLenderFieldsApi';
-import { convertFieldToRenderMethod, usePrettyPrint } from 'src/utils';
+import { convertFieldToElement } from 'src/utils';
 import { useState, useEffect } from 'react';
+import { usePrettyPrint } from 'src/hooks/usePrettyPrint';
 
 const StyledForm = styled.form`
   display: flex;
@@ -71,6 +72,7 @@ const DummyPage = () => {
 
     const initialFields = lenderData!.fields.map((field, index) => {
       const value = values[field.name];
+      const disabled = isSubmitting;
       const handleChange = (value: string | boolean) => {
         setValues((currentValues) => ({
           ...currentValues,
@@ -80,13 +82,13 @@ const DummyPage = () => {
 
       return (
         <FormGroup key={index}>
-          {convertFieldToRenderMethod(field)(value, handleChange)}
+          {convertFieldToElement(field, value, handleChange, disabled)}
         </FormGroup>
       );
     });
 
     setFields(initialFields);
-  }, [valuesLoaded, values]);
+  }, [valuesLoaded, values, isSubmitting]);
 
   const submitValues = (e: any) => {
     e.preventDefault();
@@ -97,8 +99,10 @@ const DummyPage = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        setIsSubmitting(false);
-        setDecision(data.decision);
+        setTimeout(() => {
+          setIsSubmitting(false);
+          setDecision(data.decision);
+        }, 750);
       });
   };
 
@@ -119,21 +123,23 @@ const DummyPage = () => {
       {!lenderDataIsLoading && (
         <>
           <LenderHeader>{lenderData!.name}</LenderHeader>
-          <LeadIn>
-            Fill out the form below to find out if you qualify <br />
-            for a loan with {lenderData!.name}
-          </LeadIn>
-          <StyledForm onSubmit={submitValues}>
-            {fields}
-            <FormGroup>
-              {!decision && (
-                <Button type="submit" loading={isSubmitting}>
-                  <ButtonLabel>Submit</ButtonLabel>
-                </Button>
-              )}
-            </FormGroup>
-            {decision && outcome}
-          </StyledForm>
+          {!decision && (
+            <>
+              <LeadIn>
+                Fill out the form below to find out if you qualify <br />
+                for a loan with {lenderData!.name}
+              </LeadIn>
+              <StyledForm onSubmit={submitValues}>
+                {fields}
+                <FormGroup>
+                  <Button type="submit" loading={isSubmitting}>
+                    <ButtonLabel>Submit</ButtonLabel>
+                  </Button>
+                </FormGroup>
+              </StyledForm>
+            </>
+          )}
+          {decision && outcome}
         </>
       )}
     </Container>

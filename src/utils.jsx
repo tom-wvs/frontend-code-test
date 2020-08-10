@@ -3,23 +3,17 @@ import { useState, useEffect } from 'react';
 
 export const prettyPrint = (obj) => console.log(JSON.stringify(obj, null, 2));
 
-export const usePrettyPrint = (obj) => {
-  useEffect(() => {
-    prettyPrint(obj);
-  }, [obj]);
-};
-
-export const convertFieldToRenderMethod = (field) => {
-  let fieldLabel = field.name;
-
+export const convertFieldToElement = (field, value, handleChange, disabled) => {
   const commonProps = {
     id: field.name,
-    label: fieldLabel,
+    label: field.label,
     required: field.required,
+    value,
+    disabled,
   };
 
   if (field.type === 'text') {
-    return (value, handleChange) => (
+    return (
       <TextInput
         {...commonProps}
         value={value}
@@ -29,7 +23,7 @@ export const convertFieldToRenderMethod = (field) => {
   }
 
   if (field.type === 'email') {
-    return (value, handleChange) => (
+    return (
       <TextInput
         {...commonProps}
         value={value}
@@ -40,7 +34,7 @@ export const convertFieldToRenderMethod = (field) => {
   }
 
   if (field.type === 'checkbox') {
-    return (value, handleChange) => (
+    return (
       <Checkbox
         {...commonProps}
         checked={value}
@@ -50,15 +44,13 @@ export const convertFieldToRenderMethod = (field) => {
   }
 
   if (field.type === 'select') {
-    return (value, handleChange) => (
+    return (
       <Select
         {...commonProps}
-        defaultValue=""
+        value={value}
         onChange={(e) => handleChange(e.currentTarget.value)}
       >
-        <option value="" disabled>
-          Select a value
-        </option>
+        <option value="" disabled />
         {field.options.map((option) => (
           <option key={option} value={option}>
             {option}
@@ -69,16 +61,15 @@ export const convertFieldToRenderMethod = (field) => {
   }
 
   if (field.type === 'date') {
-    return (value, handleChange) => (
+    return (
       <TextInput
         {...commonProps}
         value={value}
-        placeholder="dd/mm/yyyy"
         type="date"
         onChange={(e) => handleChange(e.currentTarget.value)}
       />
     );
   }
 
-  return () => <div {...commonProps}>{field.name}</div>;
+  return () => <div>{field.name}</div>;
 };
