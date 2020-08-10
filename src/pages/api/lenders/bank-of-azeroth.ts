@@ -12,8 +12,10 @@ const handler = (
   res: NextApiResponse<LenderGetResponse | LenderPostResponse>,
 ): void => {
   if (req.method === 'POST') {
-    const decision = Math.random() > 0.7 ? 'accepted' : 'declined';
-    res.status(200).json({ decision });
+    setTimeout(() => {
+      const decision = Math.random() > 0.7 ? 'accepted' : 'declined';
+      res.status(200).json({ decision });
+    }, 500);
   } else {
     res.status(200).json(bankOfAzerothData);
   }
